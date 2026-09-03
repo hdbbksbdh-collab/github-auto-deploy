@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub一键部署工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            padding: 50px 0;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            font-family: 'Courier New', monospace;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #5a67d8;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 GitHub一键部署工具</h1>
+            <p>简化您的GitHub项目部署流程</p>
+        </div>
+        
+        <div class="main-content">
+            <h2>🎯 核心功能</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>自动创建仓库</h3>
+                    <p>基于项目名称自动生成GitHub仓库，支持公开/私有仓库创建</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>一键部署</h3>
+                    <p>完整的Git操作流程：初始化→添加远程→提交→推送，无需手动操作</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>自动启用Pages</h3>
+                    <p>自动创建gh-pages分支、配置Pages服务，生成访问链接</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <h3>浏览器预览</h3>
+                    <p>支持自动打开浏览器预览已部署的Pages应用</p>
+                </div>
+            </div>
+            
+            <h2>📋 使用方法</h2>
+            <div class="code-block">
+                <code>
+# 1. 克隆仓库<br>
+git clone https://github.com/hdbbksbdh-collab/github-auto-deploy.git<br>
+cd github-auto-deploy<br><br>
+
+# 2. 安装依赖<br>
+pip install -r requirements.txt<br><br>
+
+# 3. 运行部署工具<br>
+python github_deploy.py<br><br>
+
+# 4. 按照提示输入信息完成部署
+                </code>
+            </div>
+            
+            <h2>🔧 配置说明</h2>
+            <p>运行工具时需要提供以下信息：</p>
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li><strong>GitHub用户名</strong> - 您的GitHub账户名</li>
+                <li><strong>Personal Access Token</strong> - 具有repo权限的访问令牌</li>
+                <li><strong>项目名称</strong> - 要创建的GitHub仓库名称</li>
+                <li><strong>项目描述</strong> - 仓库的描述信息</li>
+                <li><strong>本地项目路径</strong> - 要部署的项目目录路径</li>
+            </ul>
+            
+            <h2>📖 文档资源</h2>
+            <p>详细的使用文档和示例请查看：</p>
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li><a href="https://github.com/hdbbksbdh-collab/github-auto-deploy" style="color: #667eea; text-decoration: none;">📄 项目主页</a></li>
+                <li><a href="https://github.com/hdbbksbdh-collab/github-auto-deploy/blob/main/README.md" style="color: #667eea; text-decoration: none;">📖 详细文档</a></li>
+                <li><a href="https://github.com/hdbbksbdh-collab/github-auto-deploy/blob/main/github_deploy.py" style="color: #667eea; text-decoration: none;">💻 源代码</a></li>
+            </ul>
+            
+            <h2>🚀 快速开始</h2>
+            <p>立即体验GitHub一键部署的便利：</p>
+            <a href="https://github.com/hdbbksbdh-collab/github-auto-deploy" class="download-btn">
+                📥 下载项目
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>🎉 由 hdbbksbdh-collab 开发 | MIT License</p>
+            <p>让GitHub部署变得简单！</p>
+        </div>
+    </div>
+</body>
+</html>
